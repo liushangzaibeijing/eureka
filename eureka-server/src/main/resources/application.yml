@@ -1,0 +1,24 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: service-name
+eureka:
+  server:
+    enable-self-preservation : false
+  instance:
+    #服务实例
+    hostname: localhost
+    #租期更新时间间隔（默认30秒）
+    #lease-renewal-interval-in-seconds: 10
+    #租期到期时间（默认90秒）不怕出错的话，时间可以更短
+    #lease-expiration-duration-in-seconds: 30
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #开启健康检查（需要spring-boot-starter-actuator依赖）
+    healthcheck:
+      enabled: true
+    #自己不对自己进行服务注册
+    register-with-eureka: false
+    fetch-registry: false
