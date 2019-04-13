@@ -1,7 +1,8 @@
-package com.xiu.eurekaclient.controller;
+package com.xiu.ribbon.controller;
 
+import com.xiu.ribbon.service.RibbonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,15 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class HiController {
+public class SayHiController {
 
-    @Value("${server.port}")
-    private String port;
+    @Autowired
+    private RibbonService ribbonService;
 
     @RequestMapping("/hi")
     public String sayHi(@RequestParam String name){
 
-        return "hi "+name+" I am from "+port;
-
+       return ribbonService.hi("ribbon");
     }
 }
