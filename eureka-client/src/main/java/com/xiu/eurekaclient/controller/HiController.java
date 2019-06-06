@@ -1,10 +1,10 @@
 package com.xiu.eurekaclient.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 /**
  * author   xieqx
@@ -20,8 +20,6 @@ public class HiController {
 
     @RequestMapping("/hi")
     public String sayHi(@RequestParam String name){
-
         return "hi "+name+" I am from "+port;
-
     }
 }
