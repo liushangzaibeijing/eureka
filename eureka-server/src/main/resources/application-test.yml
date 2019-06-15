@@ -5,7 +5,7 @@ spring:
     name: service-name
 eureka:
   server:
-    enable-self-preservation : false
+    enable-self-preservation: false
   instance:
     #服务实例
     hostname: peer2
