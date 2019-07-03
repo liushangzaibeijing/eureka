@@ -11,6 +11,7 @@
         <module name="eureka-client" />
         <module name="eureka-server" />
         <module name="feign" />
+        <module name="hystrix" />
         <module name="ribbon" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="eureka-client" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="feign" target="1.8" />
+      <module name="hystrix" target="1.8" />
       <module name="ribbon" target="1.8" />
       <module name="ribbon-resttemplate" target="1.8" />
     </bytecodeTargetLevel>
