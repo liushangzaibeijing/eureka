@@ -17,3 +17,9 @@ eureka:
     #开启健康检查（需要spring-boot-starter-actuator依赖）
     #healthcheck:
       #enabled: true
+stores:
+  #ribbon 默认是从ribbon
+  ribbon:
+    listOfServers: www.baidu,com,www.google.com
+    eureka:
+     enabled: false
