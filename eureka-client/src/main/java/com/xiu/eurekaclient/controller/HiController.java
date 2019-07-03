@@ -22,6 +22,6 @@ public class HiController {
     public String sayHi(@RequestParam String name){
         return "hi "+name+" I am from "+port;
         //测试回滚
-        //cce
+
     }
 }
