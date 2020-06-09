@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "service-ribbon", url = "https://api.github.com",decode404 = false,
-        /*fallback = MyFallback.class*/ fallbackFactory = MyFallBackFactory.class)
+@FeignClient(value = "service-ribbon", url = "https://api.github.com",decode404 = true
+        /*fallback = MyFallback.class fallbackFactory = MyFallBackFactory.class*/)
 public interface GitHubApiFeign {
 
     @RequestMapping(value = "/search/repositories", method = RequestMethod.GET)

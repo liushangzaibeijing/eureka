@@ -19,6 +19,14 @@ public class JsonTest {
     }
 
 
+    @Test
+    public void testNum(){
+        String json = "9.46515‬";
+         double retain = Double.parseDouble("9.45615");
+
+         System.out.println(retain);
+    }
+
     class Student{
         private String name;
 

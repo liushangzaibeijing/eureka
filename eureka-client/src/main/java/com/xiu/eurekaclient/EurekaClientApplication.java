@@ -1,6 +1,5 @@
 package com.xiu.eurekaclient;
 
-import com.netflix.loadbalancer.BaseLoadBalancer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;

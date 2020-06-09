@@ -5,18 +5,29 @@ spring:
     name: service-feign
 eureka:
   instance:
-    #·þÎñÊµÀý
+    #ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
     hostname: 127.0.0.1
-    #×âÆÚ¸üÐÂÊ±¼ä¼ä¸ô£¨Ä¬ÈÏ30Ãë£©
+    #ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½30ï¿½ë£©
     #lease-renewal-interval-in-seconds: 10
-    #×âÆÚµ½ÆÚÊ±¼ä£¨Ä¬ÈÏ90Ãë£©²»ÅÂ³ö´íµÄ»°£¬Ê±¼ä¿ÉÒÔ¸ü¶Ì
+    #ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½Ê±ï¿½ä£¨Ä¬ï¿½ï¿½90ï¿½ë£©ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½
     #lease-expiration-duration-in-seconds: 30
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
-    #¿ªÆô½¡¿µ¼ì²é£¨ÐèÒªspring-boot-starter-actuatorÒÀÀµ£©
+    #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é£¨ï¿½ï¿½Òªspring-boot-starter-actuatorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     #healthcheck:
       #enabled: true
+
+
 feign:
    hystrix:
-      enabled: true£¬
+      enabled: true
+      command:
+         default:
+           execution:
+             isolation:
+               semaphore:
+                 timeoutInMilliseconds: 120000
+
+ribbon:
+  ReadTimeout: 60000
